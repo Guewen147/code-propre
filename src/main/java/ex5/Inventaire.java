@@ -17,6 +17,16 @@ public class Inventaire {
 	public void addItem(Item item) {
 
 		//TODO Faites évoluer ce code (idée: c'est le caisse qui doit "savoir" si elle peut accepter un objet ou non)
+		//TODO Modifier la classe Caisse pour que ce soit cette derniere qui fasse le controle du poids
+		
+		Caisse c = caisses.get(0);
+		if (c.controlePoids(item)) {
+			c.getItems().add(item);
+		}
+		//boucle 
+		
+		
+		
 		if (item.getPoids() < 5) {
 			caisses.get(0).getItems().add(item);
 		}
